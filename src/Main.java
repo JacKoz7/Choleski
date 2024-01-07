@@ -15,9 +15,9 @@ public class Main {
                 macierz[i][j] = scanner.nextInt();
             }
         }
-        System.out.println("\nPodaj wyniki równań: ");
+        System.out.println("\nPodaj prawe strony rownan równań(macierz b): ");
         for(int i = 0; i < N; i++){
-            System.out.print("Rozwiązanie dla "+ (i + 1) + " równania: ");
+            System.out.print("prawa strona dla "+ (i + 1) + " równania: ");
             AnsList[i] = scanner.nextInt();
         }
         System.out.println("\nWprowadzona macierz:");   //wyswietlanie macierzy A
@@ -28,7 +28,7 @@ public class Main {
             System.out.println();
         }
 
-        System.out.println("Wyniki rownań ");  //wyswietlenie wyników równań
+        System.out.println("Macierz b");  //wyswietlenie wyników równań
         for (int i = 0; i < N; i++){
             System.out.println(AnsList[i] + " ");
         }
