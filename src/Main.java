@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Podaj liczbę wierszy i kolumn macierzy: ");
+        System.out.print("Podaj liczbę wierszy macierzy: ");
         int N = scanner.nextInt();
         int[][] macierz = new int[N][N]; //Macierz A
         int[] AnsList = new int[N]; //Macierz z wynikami rownan
