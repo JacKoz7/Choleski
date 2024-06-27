@@ -28,12 +28,16 @@ Każda dodatnio określona macierz Hermitowska może być również rozłożona 
 \[ A = MDM*\]
 gdzie \(M\) jest macierzą dolnotrójkątną z jedynkami na głównej przekątnej, \(D\) jest macierzą diagonalną z dodatnimi wartościami na głównej przekątnej, a \(M*\) jest macierzą sprzężoną i transponowaną do macierzy \(M\).
 
+1. Rozkładamy macierz \(A)\ na \(A = MDM\*\)
+2. Rozwiązujemy układ równań \(My = b\) w celu znalezienia wektora \(y\).
+3. Rozwiązujemy układ równań \(M^Tx = D^(-1)y\) w celu znalezienia wektora \(x\).
+
 ## Implementacja
 
 Projekt zawiera dwie metody rozwiązywania układów równań liniowych:
 
 1. **Metoda 1: \(A = LL^T\)**
-2. **Metoda 2: \(A = MDM\*\\)**
+2. **Metoda 2: \(A = MDM\*\)**
 
 ### Pliki
 
