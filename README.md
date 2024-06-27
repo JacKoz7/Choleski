@@ -28,7 +28,7 @@ gdzie \(L^T\) oznacza sprzężenie hermitowskie (transpozycja i sprzężenie zes
 ### Rozkład Choleskiego z Macierzą Diagonalną
 
 Każda dodatnio określona macierz Hermitowska może być również rozłożona w postaci:
-\[ A = MDM* \]
+\[ A = MDM*\]
 gdzie \(M\) jest macierzą dolnotrójkątną z jedynkami na głównej przekątnej, \(D\) jest macierzą diagonalną z dodatnimi wartościami na głównej przekątnej, a \(M*\) jest macierzą sprzężoną i transponowaną do macierzy \(M\).
 
 ## Implementacja
@@ -36,7 +36,7 @@ gdzie \(M\) jest macierzą dolnotrójkątną z jedynkami na głównej przekątne
 Projekt zawiera dwie metody rozwiązywania układów równań liniowych:
 
 1. **Metoda 1: \(A = LL^T\)**
-2. **Metoda 2: \(A = MDM*\)**
+2. ***Metoda 2: \(A = MDM*\)**
 
 ### Pliki
 
