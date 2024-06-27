@@ -22,30 +22,24 @@ Aby rozwiązać układ równań \(Ax = b\) przy użyciu rozkładu Choleskiego:
 ### Macierze Hermitowskie
 
 Dla macierzy Hermitowskich, które są macierzami zespolonymi spełniającymi określone warunki symetrii, rozkład Choleskiego jest nieco zmodyfikowany i zapisuje się jako:
-\[ A = LL^* \]
-gdzie \(L^*\) oznacza sprzężenie hermitowskie (transpozycja i sprzężenie zespolone) macierzy \(L\).
+\[ A = LL^T \]
+gdzie \(L^T\) oznacza sprzężenie hermitowskie (transpozycja i sprzężenie zespolone) macierzy \(L\).
 
 ### Rozkład Choleskiego z Macierzą Diagonalną
 
 Każda dodatnio określona macierz Hermitowska może być również rozłożona w postaci:
-\[ A = MDM^* \]
-gdzie \(M\) jest macierzą dolnotrójkątną z jedynkami na głównej przekątnej, \(D\) jest macierzą diagonalną z dodatnimi wartościami na głównej przekątnej, a \(M^*\) jest sprzężeniem hermitowskim macierzy \(M\).
+\[ A = MDM* \]
+gdzie \(M\) jest macierzą dolnotrójkątną z jedynkami na głównej przekątnej, \(D\) jest macierzą diagonalną z dodatnimi wartościami na głównej przekątnej, a \(M*\) jest macierzą sprzężoną i transponowaną do macierzy \(M\).
 
 ## Implementacja
 
 Projekt zawiera dwie metody rozwiązywania układów równań liniowych:
 
 1. **Metoda 1: \(A = LL^T\)**
-2. **Metoda 2: \(A = MDM^*\)**
+2. **Metoda 2: \(A = MDM*\)**
 
 ### Pliki
 
 - **Main.java**: Główny punkt wejścia aplikacji. Obsługuje wejście użytkownika i wybór metody rozkładu.
 - **CholeskiLLT.java**: Implementuje rozkład \(A = LL^T\) oraz rozwiązanie układu równań tą metodą.
 - **CholeskiMDM2.java**: Implementuje rozkład \(A = MDM^*\) oraz rozwiązanie układu równań tą metodą.
-
-## Użytkowanie
-
-1. **Kompilacja kodu:**
-   ```bash
-   javac Main.java CholeskiLLT.java CholeskiMDM2.java
