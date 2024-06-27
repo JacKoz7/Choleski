@@ -33,7 +33,7 @@ gdzie \(M\) jest macierzą dolnotrójkątną z jedynkami na głównej przekątne
 Projekt zawiera dwie metody rozwiązywania układów równań liniowych:
 
 1. **Metoda 1: \(A = LL^T\)**
-2. ***Metoda 2: \(A = MDM*\)**
+2. **Metoda 2: \(A = MDM\*\\)**
 
 ### Pliki
 
