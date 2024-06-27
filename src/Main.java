@@ -15,9 +15,9 @@ public class Main {
                 macierz[i][j] = scanner.nextInt();
             }
         }
-        System.out.println("\nPodaj prawe strony rownan równań (macierz b): ");
+        System.out.println("\nPodaj wyniki równań (prawa strona równaia czyli macierz b): ");
         for(int i = 0; i < N; i++){
-            System.out.print("prawa strona "+ (i + 1) + " równania: ");
+            System.out.print("Wynik "+ (i + 1) + " równania: ");
             AnsList[i] = scanner.nextInt();
         }
         System.out.println("\nWprowadzona macierz:");   //wyswietlanie macierzy A
@@ -34,8 +34,8 @@ public class Main {
         }
         System.out.println();
 
-        CholeskiLLT choleskiLLT = new CholeskiLLT(macierz, N, AnsList); //tworzymy obiekt choleski LLT
-        CholeskiMDM2 choleskiMDM2 = new CholeskiMDM2(macierz, N, AnsList); //tworzymy obiekt choleski MDM
+        CholeskiLLT choleskiLLT = new CholeskiLLT(macierz, N, AnsList);
+        CholeskiMDM2 choleskiMDM2 = new CholeskiMDM2(macierz, N, AnsList);
         System.out.println("Wybierz metodę: ");
         System.out.println("1 - A = LL^T");
         System.out.println("2 - A = MDM*");
