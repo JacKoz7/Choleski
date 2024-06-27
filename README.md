@@ -11,6 +11,9 @@ Ten projekt implementuje metody numeryczne do rozwiązywania układów równań 
 Dla symetrycznej, dodatnio określonej macierzy \(A\), rozkład Choleskiego polega na znalezieniu macierzy dolnotrójkątnej \(L\) takiej, że:
 \[ A = LL^T \]
 gdzie \(L\) jest macierzą dolnotrójkątną. Rozkład ten umożliwia uproszczenie obliczeń i jest wykorzystywany do efektywnego rozwiązywania układów równań liniowych.
+Dla macierzy Hermitowskich, które są macierzami zespolonymi spełniającymi określone warunki symetrii, rozkład Choleskiego jest nieco zmodyfikowany i zapisuje się jako:
+\[ A = LL^T \]
+gdzie \(L^T\) oznacza sprzężenie hermitowskie (transpozycja i sprzężenie zespolone) macierzy \(L\).
 
 ### Rozwiązywanie Układów Równań
 
@@ -18,12 +21,6 @@ Aby rozwiązać układ równań \(Ax = b\) przy użyciu rozkładu Choleskiego:
 1. Rozkładamy macierz \(A\) na \(LL^T\).
 2. Rozwiązujemy układ równań \(Ly = b\) w celu znalezienia wektora \(y\).
 3. Rozwiązujemy układ równań \(L^Tx = y\) w celu znalezienia wektora \(x\).
-
-### Macierze Hermitowskie
-
-Dla macierzy Hermitowskich, które są macierzami zespolonymi spełniającymi określone warunki symetrii, rozkład Choleskiego jest nieco zmodyfikowany i zapisuje się jako:
-\[ A = LL^T \]
-gdzie \(L^T\) oznacza sprzężenie hermitowskie (transpozycja i sprzężenie zespolone) macierzy \(L\).
 
 ### Rozkład Choleskiego z Macierzą Diagonalną
 
