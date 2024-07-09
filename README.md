@@ -29,6 +29,7 @@ Solve the system of equations (M^Tx = D^(-1)y) to find vector (x).
 The project includes two methods for solving systems of linear equations:
 
 Method 1: (A = LL^T)
+
 Method 2: (A = MDM)*
 
 ### Files
