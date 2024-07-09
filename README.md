@@ -1,46 +1,38 @@
-# Algorytmy Rozkładu Choleskiego
+# Cholesky Decomposition Algorithms
+## Introduction
+This project implements numerical methods for solving systems of linear equations using Cholesky decomposition. Cholesky decomposition is a matrix factorization technique that decomposes a symmetric, positive-definite matrix (A) into the product of a lower triangular matrix (L) and its transpose (L^T).
+## Theoretical Foundations
+### Cholesky Decomposition
+For a symmetric, positive-definite matrix (A), Cholesky decomposition involves finding a lower triangular matrix (L) such that:
+[ A = LL^T ]
+where (L) is a lower triangular matrix. This decomposition simplifies calculations and is used for efficiently solving systems of linear equations.
+For Hermitian matrices, which are complex matrices satisfying specific symmetry conditions, the Cholesky decomposition is slightly modified and written as:
+[ A = LL^T ]
+where (L^T) denotes the Hermitian conjugate (transpose and complex conjugate) of matrix (L).
+### Solving Systems of Equations
+To solve the system of equations (Ax = b) using Cholesky decomposition:
 
-## Wprowadzenie
+Decompose matrix (A) into (LL^T).
+Solve the system of equations (Ly = b) to find vector (y).
+Solve the system of equations (L^Tx = y) to find vector (x).
 
-Ten projekt implementuje metody numeryczne do rozwiązywania układów równań liniowych przy użyciu rozkładu Choleskiego. Rozkład Choleskiego jest techniką faktoryzacji macierzy, która rozkłada symetryczną, dodatnio określoną macierz \(A\) na iloczyn macierzy dolnotrójkątnej \(L\) i jej transponowanej \(L^T\).
+### Cholesky Decomposition with Diagonal Matrix
+Every positive-definite Hermitian matrix can also be decomposed in the form:
+[ A = MDM* ]
+where (M) is a lower triangular matrix with ones on the main diagonal, (D) is a diagonal matrix with positive values on the main diagonal, and (M*) is the conjugate transpose of matrix (M).
 
-## Teoretyczne Podstawy
+Decompose matrix (A) into (A = MDM*)
+Solve the system of equations (My = b) to find vector (y).
+Solve the system of equations (M^Tx = D^(-1)y) to find vector (x).
 
-### Rozkład Choleskiego
+## Implementation
+The project includes two methods for solving systems of linear equations:
 
-Dla symetrycznej, dodatnio określonej macierzy \(A\), rozkład Choleskiego polega na znalezieniu macierzy dolnotrójkątnej \(L\) takiej, że:
-\[ A = LL^T \]
-gdzie \(L\) jest macierzą dolnotrójkątną. Rozkład ten umożliwia uproszczenie obliczeń i jest wykorzystywany do efektywnego rozwiązywania układów równań liniowych.
-Dla macierzy Hermitowskich, które są macierzami zespolonymi spełniającymi określone warunki symetrii, rozkład Choleskiego jest nieco zmodyfikowany i zapisuje się jako:
-\[ A = LL^T \]
-gdzie \(L^T\) oznacza sprzężenie hermitowskie (transpozycja i sprzężenie zespolone) macierzy \(L\).
+Method 1: (A = LL^T)
+Method 2: (A = MDM)*
 
-### Rozwiązywanie Układów Równań
+### Files
 
-Aby rozwiązać układ równań \(Ax = b\) przy użyciu rozkładu Choleskiego:
-1. Rozkładamy macierz \(A\) na \(LL^T\).
-2. Rozwiązujemy układ równań \(Ly = b\) w celu znalezienia wektora \(y\).
-3. Rozwiązujemy układ równań \(L^Tx = y\) w celu znalezienia wektora \(x\).
-
-### Rozkład Choleskiego z Macierzą Diagonalną
-
-Każda dodatnio określona macierz Hermitowska może być również rozłożona w postaci:
-\[ A = MDM*\]
-gdzie \(M\) jest macierzą dolnotrójkątną z jedynkami na głównej przekątnej, \(D\) jest macierzą diagonalną z dodatnimi wartościami na głównej przekątnej, a \(M*\) jest macierzą sprzężoną i transponowaną do macierzy \(M\).
-
-1. Rozkładamy macierz \(A)\ na \(A = MDM\*\)
-2. Rozwiązujemy układ równań \(My = b\) w celu znalezienia wektora \(y\).
-3. Rozwiązujemy układ równań \(M^Tx = D^(-1)y\) w celu znalezienia wektora \(x\).
-
-## Implementacja
-
-Projekt zawiera dwie metody rozwiązywania układów równań liniowych:
-
-1. **Metoda 1: \(A = LL^T\)**
-2. **Metoda 2: \(A = MDM\*\)**
-
-### Pliki
-
-- **Main.java**: Główny punkt wejścia aplikacji. Obsługuje wejście użytkownika i wybór metody rozkładu.
-- **CholeskiLLT.java**: Implementuje rozkład \(A = LL^T\) oraz rozwiązanie układu równań tą metodą.
-- **CholeskiMDM2.java**: Implementuje rozkład \(A = MDM^*\) oraz rozwiązanie układu równań tą metodą.
+Main.java: The main entry point of the application. Handles user input and method selection for decomposition.
+CholeskiLLT.java: Implements the (A = LL^T) decomposition and solution of the system of equations using this method.
+CholeskiMDM2.java: Implements the (A = MDM*) decomposition and solution of the system of equations using this method.
