@@ -1,18 +1,18 @@
-public class CholeskiMDM2 {
-    private int[][] macierz;
+public class CholeskyMDM2 {
+    private int[][] matrix;
     private int size;
     private double[][] M;
     private double[][] D;
 
-    public CholeskiMDM2(int[][] macierz, int size, int[] solutions) {
-        this.macierz = macierz;
+    public CholeskyMDM2(int[][] matrix, int size, int[] solutions) {
+        this.matrix = matrix;
         this.size = size;
         this.M = new double[size][size];
         this.D = new double[size][size];
     }
-    public double[][][] CholeskiDlaChetnych(){ //metoda obliczajaca M I D
+    public double[][][] CholeskySecond(){ //metoda obliczajaca M I D
         for (int i = 0; i < size; i++) {
-            double sum = macierz[i][i];
+            double sum = matrix[i][i];
             for (int k = 0; k < i; k++) {
                 sum -= M[i][k] * D[k][k] * M[i][k];
             }
@@ -20,7 +20,7 @@ public class CholeskiMDM2 {
             D[i][i] = sum;
 
             for (int j = i; j < size; j++) {
-                sum = macierz[j][i];
+                sum = matrix[j][i];
                 for (int k = 0; k < i; k++) {
                     sum -= M[j][k] * D[k][k] * M[i][k];
                 }
@@ -31,7 +31,7 @@ public class CholeskiMDM2 {
         return new double[][][]{M, D};
     }
 
-    public double[][] transpozycjaM(double[][] matrix) {
+    public double[][] transpositionM(double[][] matrix) {
         double[][] result = new double[size][size];
 
         for (int i = 0; i < size; i++) {

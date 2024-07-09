@@ -1,5 +1,5 @@
-public class CholeskiLLT {
-    private int[][] macierz;
+public class CholeskyLLT {
+    private int[][] matrix;
     private int size;
     private int[] solutions;
     private double[][] L;
@@ -7,8 +7,8 @@ public class CholeskiLLT {
     private double[][] LT;
     private double[] x;
 
-    public CholeskiLLT(int[][] macierz, int size, int[] solutions) {
-        this.macierz = macierz;
+    public CholeskyLLT(int[][] matrix, int size, int[] solutions) {
+        this.matrix = matrix;
         this.size = size;
         this.solutions = solutions;
         this.L = new double[size][size];
@@ -25,12 +25,12 @@ public class CholeskiLLT {
                     for (int k = 0; k < j; k++) {
                         sum += Math.pow(L[j][k], 2);
                     }
-                    L[j][j] = Math.sqrt(macierz[j][j] - sum);
+                    L[j][j] = Math.sqrt(matrix[j][j] - sum);
                 } else {
                     for (int k = 0; k < j; k++) {
                         sum += (L[i][k] * L[j][k]);
                     }
-                    L[i][j] = (macierz[i][j] - sum) / L[j][j];
+                    L[i][j] = (matrix[i][j] - sum) / L[j][j];
                 }
             }
         }

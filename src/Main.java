@@ -5,14 +5,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Podaj liczbę wierszy macierzy: ");
         int N = scanner.nextInt();
-        int[][] macierz = new int[N][N]; //Macierz A
+        int[][] matrix = new int[N][N]; //Macierz A
         int[] AnsList = new int[N]; //Macierz z wynikami rownan
         System.out.println("Wypełnij wiersze macierzy ");
         for(int i = 0; i < N; i++){
             System.out.println("Wiersz " + (i + 1) + ":");
             for(int j = 0; j < N; j++){
                 System.out.print("Podaj wartość dla kolumny " + (j + 1) + ": ");
-                macierz[i][j] = scanner.nextInt();
+                matrix[i][j] = scanner.nextInt();
             }
         }
         System.out.println("\nPodaj wyniki równań (prawa strona równaia czyli macierz b): ");
@@ -23,7 +23,7 @@ public class Main {
         System.out.println("\nWprowadzona macierz:");   //wyswietlanie macierzy A
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                System.out.print(macierz[i][j] + " ");
+                System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
         }
@@ -34,8 +34,8 @@ public class Main {
         }
         System.out.println();
 
-        CholeskiLLT choleskiLLT = new CholeskiLLT(macierz, N, AnsList);
-        CholeskiMDM2 choleskiMDM2 = new CholeskiMDM2(macierz, N, AnsList);
+        CholeskyLLT choleskyLLT = new CholeskyLLT(matrix, N, AnsList);
+        CholeskyMDM2 choleskyMDM2 = new CholeskyMDM2(matrix, N, AnsList);
         System.out.println("Wybierz metodę: ");
         System.out.println("1 - A = LL^T");
         System.out.println("2 - A = MDM*");
@@ -43,35 +43,35 @@ public class Main {
         if(choice == 1){
             System.out.println("Wybrano A = LL^T");
             System.out.println("\nMacierz L wygląda tak: ");
-            choleskiLLT.gettingL(); //tworzy i wyswietla macierz L
-            double[] y = choleskiLLT.solveLEquation(); // oblicza wszystkie y
+            choleskyLLT.gettingL(); //tworzy i wyswietla macierz L
+            double[] y = choleskyLLT.solveLEquation(); // oblicza wszystkie y
             System.out.println("\nWyniki y");
             for (int i = 0; i < N; i++) {
                 System.out.print(y[i] + "\n");
             }
-            choleskiLLT.gettingLT(); //Tworzy i wyswietla macierz LT
-            double[] x = choleskiLLT.solveLTEquation(); //oblicza wszytskie x
+            choleskyLLT.gettingLT(); //Tworzy i wyswietla macierz LT
+            double[] x = choleskyLLT.solveLTEquation(); //oblicza wszytskie x
             System.out.println("\nWyniki x");
             for(int i = 0; i < N; i++){
                 System.out.print(x[i] + "\n");
             }
         } else if (choice == 2) {
             System.out.println("Wybrano A = MDM*");
-            double[][][] result = choleskiMDM2.CholeskiDlaChetnych();
+            double[][][] result = choleskyMDM2.CholeskySecond();
             System.out.println("\nMacierz M: ");
-            choleskiMDM2.printMatrix(result[0]);
+            choleskyMDM2.printMatrix(result[0]);
             System.out.println("\nMacierz D: ");
-            choleskiMDM2.printMatrix(result[1]);
+            choleskyMDM2.printMatrix(result[1]);
             System.out.println("\nMacierz M*: ");
-            choleskiMDM2.printMatrix(choleskiMDM2.transpozycjaM(result[0]));
+            choleskyMDM2.printMatrix(choleskyMDM2.transpositionM(result[0]));
             System.out.println("\nMacierz D^-1: ");
-            choleskiMDM2.printMatrix(choleskiMDM2.Diagonal(result[1]));
+            choleskyMDM2.printMatrix(choleskyMDM2.Diagonal(result[1]));
             System.out.println("\nwyniki y: ");
-            double[] y = choleskiMDM2.calculateY(result[0], AnsList);
+            double[] y = choleskyMDM2.calculateY(result[0], AnsList);
             for (double value : y) {
                 System.out.print(value + "\n");
             }
-            double[] x = choleskiMDM2.calculateX(choleskiMDM2.transpozycjaM(result[0]), choleskiMDM2.Diagonal(result[1]), y);
+            double[] x = choleskyMDM2.calculateX(choleskyMDM2.transpositionM(result[0]), choleskyMDM2.Diagonal(result[1]), y);
             System.out.println("\nwyniki x: ");
             for (double value : x) {
                 System.out.print(value + "\n");
