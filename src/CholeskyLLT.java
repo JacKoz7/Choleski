@@ -50,7 +50,7 @@ public class CholeskyLLT {
         }
 
         // wyswietlanie LT
-        System.out.println("\nMacierz transponowana LT:");
+        System.out.println("\ntranspose matrix L^T:");
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 System.out.print(LT[i][j] + "   ");
