@@ -35,8 +35,8 @@ Sample solution of the following equations using both methods:
 1x<sub>1</sub> + 2x<sub>2</sub> + 3x<sub>3</sub> = 1 
 2x<sub>1</sub> + 8x<sub>2</sub> + 10x<sub>3</sub> = 3 
 3x<sub>1</sub> + 10x<sub>2</sub> + 22x<sub>3</sub> = 7 
-where x1, x2, and x3 are the unknowns
-_
+where x<sub>1</sub>, x<sub>2</sub>, and x<sub>3</sub> are the unknowns
+__
 Enter the number of matrix rows: 3
 Fill in the matrix rows 
 Row 1:
@@ -90,7 +90,7 @@ Transposed matrix LT:
 Results x
 0.16666666666666663
 -0.08333333333333331
-0.3333333333333333_
+0.3333333333333333__
 
 
 ### Files
