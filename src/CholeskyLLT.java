@@ -17,6 +17,7 @@ public class CholeskyLLT {
         this.x = new double[size];
     }
 
+    // calculating matrix L
     public void gettingL() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j <= i; j++) {
@@ -36,28 +37,30 @@ public class CholeskyLLT {
         }
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                System.out.print(L[i][j] + "   ");
+                System.out.print(L[i][j] + " ");
             }
             System.out.println();
         }
     }
+
+    // Transposition of matrix L
     public void gettingLT() {
-        // Transpozycja macierzy L
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 LT[i][j] = L[j][i];
             }
         }
-
-        // wyswietlanie LT
-        System.out.println("\ntranspose matrix L^T:");
+        // displaying LT
+        System.out.println("\nTransposed matrix LT:");
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                System.out.print(LT[i][j] + "   ");
+                System.out.print(LT[i][j] + " ");
             }
             System.out.println();
         }
     }
+
+    // solving equation Ly=b
     public double[] solveLEquation() {
         for (int i = 0; i < size; i++) {
             double sum = 0;
@@ -66,12 +69,11 @@ public class CholeskyLLT {
             }
             y[i] = (solutions[i] - sum) / L[i][i];
         }
-
         return y;
     }
 
+    // solving equation L^Tx=y
     public double[] solveLTEquation() {
-
         for (int i = size - 1; i >= 0; i--) {
             double sum = 0;
             for (int j = size - 1; j > i; j--) {
@@ -79,7 +81,6 @@ public class CholeskyLLT {
             }
             x[i] = (y[i] - sum) / LT[i][i];
         }
-
         return x;
     }
 }

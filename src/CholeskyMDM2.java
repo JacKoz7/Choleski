@@ -10,15 +10,15 @@ public class CholeskyMDM2 {
         this.M = new double[size][size];
         this.D = new double[size][size];
     }
-    public double[][][] CholeskySecond(){ //metoda obliczajaca M I D
+
+    //method calculating M and D:
+    public double[][][] CholeskySecond(){
         for (int i = 0; i < size; i++) {
             double sum = matrix[i][i];
             for (int k = 0; k < i; k++) {
                 sum -= M[i][k] * D[k][k] * M[i][k];
             }
-
             D[i][i] = sum;
-
             for (int j = i; j < size; j++) {
                 sum = matrix[j][i];
                 for (int k = 0; k < i; k++) {
@@ -27,22 +27,21 @@ public class CholeskyMDM2 {
                 M[j][i] = sum / D[i][i];
             }
         }
-
         return new double[][][]{M, D};
     }
 
+    // transposition of matrix M (M^T)
     public double[][] transpositionM(double[][] matrix) {
         double[][] result = new double[size][size];
-
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 result[j][i] = matrix[i][j];
             }
         }
-
         return result;
     }
 
+    // method for displaying the matrix
     public void printMatrix(double[][] matrix) {
         for (double[] row : matrix) {
             for (double value : row) {
@@ -52,7 +51,8 @@ public class CholeskyMDM2 {
         }
     }
 
-    public double[][] Diagonal(double[][] matrix) { //metoda obliczajaca D^-1
+    //method calculating D^-1
+    public double[][] Diagonal(double[][] matrix) {
         double[][] result = new double[size][size];
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -66,9 +66,9 @@ public class CholeskyMDM2 {
         return result;
     }
 
+    // solving equation My=b
     public double[] calculateY(double[][] matrixM, int[] solutions) {
         double[] y = new double[size];
-
         for (int i = 0; i < size; i++) {
             double sum = 0.0;
             for (int j = 0; j < i; j++) {
@@ -76,13 +76,12 @@ public class CholeskyMDM2 {
             }
             y[i] = (solutions[i] - sum) / matrixM[i][i];
         }
-
         return y;
     }
 
+    // solving equation M^Tx=D^(-1)y
     public double[] calculateX(double[][] matrixMTransposed, double[][] matrixDInverse, double[] y) {
         double[] x = new double[size];
-
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (matrixDInverse[i][j] != 0) {
@@ -90,7 +89,6 @@ public class CholeskyMDM2 {
                 }
             }
         }
-
         for (int i = size - 1; i >= 0; i--) {
             double sum = 0.0;
             for (int j = size - 1; j > i; j--) {
@@ -98,8 +96,6 @@ public class CholeskyMDM2 {
             }
             x[i] = (y[i] - sum) / matrixMTransposed[i][i];
         }
-
         return x;
     }
-
 }
