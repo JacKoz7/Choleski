@@ -28,13 +28,13 @@ where M is a lower triangular matrix with ones on the main diagonal, D is a diag
 ## Implementation
 The project includes two methods for solving systems of linear equations:
 
-Method 1: A = LL^T
+Method 1: A = LL^T  
 Method 2: A = MDM*
 
 Sample solution of the following equations using both methods:
-1<sub>x1</sub> + 2<sub>x2</sub> + 3<sub>x3</sub> = 1
-2x1 + 8x2 + 10x3 = 3
-3x1 + 10x2 + 22x3 = 7
+1x<sub>1</sub> + 2x<sub>2</sub> + 3x<sub>3</sub> = 1 
+2x<sub>1</sub> + 8x<sub>2</sub> + 10x<sub>3</sub> = 3 
+3x<sub>1</sub + 10x<sub>2</sub> + 22x<sub>3</sub> = 7 
 where x1, x2, and x3 are the unknowns
 _
 Enter the number of matrix rows: 3
