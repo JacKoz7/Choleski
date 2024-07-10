@@ -37,7 +37,7 @@ Sample solution of the following equations using both methods:
 3x<sub>1</sub> + 10x<sub>2</sub> + 22x<sub>3</sub> = 7    
 where x<sub>1</sub>, x<sub>2</sub>, and x<sub>3</sub> are the unknowns  
 
-Enter the number of matrix rows: 3   
+**Enter the number of matrix rows: 3   
 Fill in the matrix rows    
 Row 1:   
 Enter value for column 1: 1   
@@ -90,7 +90,7 @@ Transposed matrix LT:
 Results x   
 0.16666666666666663   
 -0.08333333333333331   
-0.3333333333333333   
+0.3333333333333333  ** 
    
 ### Files
 
