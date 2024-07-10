@@ -37,61 +37,61 @@ Sample solution of the following equations using both methods:
 3x<sub>1</sub> + 10x<sub>2</sub> + 22x<sub>3</sub> = 7    
 where x<sub>1</sub>, x<sub>2</sub>, and x<sub>3</sub> are the unknowns  
 
-Enter the number of matrix rows: 3
-Fill in the matrix rows 
-Row 1:
-Enter value for column 1: 1
-Enter value for column 2: 2
-Enter value for column 3: 3
-Row 2:
-Enter value for column 1: 2
-Enter value for column 2: 8
-Enter value for column 3: 10
-Row 3:
-Enter value for column 1: 3
-Enter value for column 2: 10
-Enter value for column 3: 22
-
-Enter right side of the equation, i.e., matrix b: 
-Result of equation 1: 1
-Result of equation 2: 3
-Result of equation 3: 7
-
-Entered matrix:
-1 2 3 
-2 8 10 
-3 10 22 
-Matrix b
-1 
-3 
-7 
-
-Choose a method: 
-1 - A = LL^T
-2 - A = MDM*
-1
-Selected A = LL^T
-
-Matrix L looks like this: 
-1.0 0.0 0.0 
-2.0 2.0 0.0 
-3.0 2.0 3.0 
-
-Results y
-1.0
-0.5
-1.0
-
-Transposed matrix LT:
-1.0 2.0 3.0 
-0.0 2.0 2.0 
-0.0 0.0 3.0 
-
-Results x
-0.16666666666666663
--0.08333333333333331
-0.3333333333333333
-
+Enter the number of matrix rows: 3   
+Fill in the matrix rows    
+Row 1:   
+Enter value for column 1: 1   
+Enter value for column 2: 2   
+Enter value for column 3: 3   
+Row 2:   
+Enter value for column 1: 2   
+Enter value for column 2: 8   
+Enter value for column 3: 10   
+Row 3:   
+Enter value for column 1: 3    
+Enter value for column 2: 10   
+Enter value for column 3: 22   
+  
+Enter right side of the equation, i.e., matrix b:    
+Result of equation 1: 1   
+Result of equation 2: 3   
+Result of equation 3: 7   
+   
+Entered matrix:   
+1 2 3    
+2 8 10    
+3 10 22    
+Matrix b   
+1    
+3    
+7   
+  
+Choose a method:    
+1 - A = LL^T   
+2 - A = MDM*   
+1   
+Selected A = LL^T   
+   
+Matrix L looks like this:    
+1.0 0.0 0.0    
+2.0 2.0 0.0    
+3.0 2.0 3.0    
+    
+Results y   
+1.0     
+0.5   
+1.0   
+   
+Transposed matrix LT:    
+1.0 2.0 3.0    
+0.0 2.0 2.0    
+0.0 0.0 3.0    
+   
+Results x   
+0.16666666666666663   
+-0.08333333333333331   
+0.3333333333333333   
+   
 ### Files
 
 - Main.java: The main entry point of the application. Handles user input and method selection for decomposition.
