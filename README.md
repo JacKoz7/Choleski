@@ -121,5 +121,5 @@ Results x:
 -0.08333333333333331   
 0.3333333333333333    
 ```   
-
-# https://replit.com/@JacekKozlowski1/Cholesky-Decomposition-Algorithms
+## Run the code:
+### https://replit.com/@JacekKozlowski1/Cholesky-Decomposition-Algorithms
