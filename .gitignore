@@ -27,6 +27,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store".idea" 
-"Choleski.iml" 
-".idea" 
-"Choleski.iml" 
+
+.idea
+Choleski.iml
